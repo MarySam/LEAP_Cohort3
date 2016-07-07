@@ -1,0 +1,2 @@
+C:\Users\v-sammar\Documents\CSPrinciples\MarysPokerGame\MarysPokerGame\bin\Debug\MarysPokerGame.exe.config
+C:\Users\v-sammar\Documents\GIT\LEAP_Cohort3\MarysPokerGame\MarysPokerGame\bin\Debug\MarysPokerGame.exe.config
