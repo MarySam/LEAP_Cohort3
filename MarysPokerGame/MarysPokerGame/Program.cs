@@ -10,7 +10,7 @@ namespace MarysPokerGame
     {
         public static bool IsStraightFlush(Card[] Hand)
         {
-            if (IsStraight(Hand) && IsFlush(Hand))
+            if (true)//IsStraight(Hand) && IsFlush(Hand))
             {
                 return true;
             }
@@ -49,20 +49,20 @@ namespace MarysPokerGame
                 return false;
             }
         }
-
+        /*
         public static bool IsFlush(Card[] Hand)
         {
-
+           //For loop.  Iterate through the suits and compare.  If they are the same then return true.
         }
 
         public static bool IsStraight(Card[] Hand)
         {
-
+            //Make sure that the difference between each card is equal to one.
         }
 
         public static bool IsThreeOfAKind(Card[] Hand)
         {
-
+        //for loop: i-2,
         }
 
         public static bool TwoPairs(Card[] Hand)
@@ -79,7 +79,7 @@ namespace MarysPokerGame
         {
             //All other cards that were not filtered above for conditions end up here.
         }
-
+        */
         enum HandTypes
         {
             Highcard,
@@ -96,8 +96,11 @@ namespace MarysPokerGame
         static void Main(string[] args)
         {
             //Before we filter down these methods, we have to first sort the hand.
+            Card[] hands = new Card[2];
+            hands[0] = new Card(Rank.Eight, Suit.Diamond);
+            hands[1] = new Card(Rank.Four, Suit.Diamond);
 
-            Array.Sort(hand);
+            Array.Sort(hands);
 
         }
     }

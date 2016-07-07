@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MarysPokerGame
 {
-   public class Card:IComparable<Card>
+    public class Card : IComparable<Card>
     {
         public Rank Rank { get; private set; }
         public Suit Suit { get; private set; }
@@ -20,16 +20,16 @@ namespace MarysPokerGame
 
         public int CompareTo(Card other)
         {
-            if (other == null) return 1;
+            // t   o
+            // RS  RS
+            // 2H, 4H
+            if (this.Rank == other.Rank && this.Suit == other.Suit) return 0;
 
-            if (other.Rank == this.Rank)
-            {
-                return other.Suit.CompareTo(this.Suit);
-            }
-            else
-            {
-                return other.Rank.CompareTo(this.Rank);
-            }
+            if (this.Rank > other.Rank) return 1;
+
+            if (this.Rank < other.Rank) return -1;
+
+            return 0;
         }
     }
 }

@@ -1,2 +1,7 @@
 C:\Users\v-sammar\Documents\CSPrinciples\MarysPokerGame\MarysPokerGame\bin\Debug\MarysPokerGame.exe.config
 C:\Users\v-sammar\Documents\GIT\LEAP_Cohort3\MarysPokerGame\MarysPokerGame\bin\Debug\MarysPokerGame.exe.config
+C:\Users\v-sammar\Documents\GIT\LEAP_Cohort3\MarysPokerGame\MarysPokerGame\obj\Debug\MarysPokerGame.csprojResolveAssemblyReference.cache
+C:\Users\v-sammar\Documents\GIT\LEAP_Cohort3\MarysPokerGame\MarysPokerGame\bin\Debug\MarysPokerGame.exe
+C:\Users\v-sammar\Documents\GIT\LEAP_Cohort3\MarysPokerGame\MarysPokerGame\bin\Debug\MarysPokerGame.pdb
+C:\Users\v-sammar\Documents\GIT\LEAP_Cohort3\MarysPokerGame\MarysPokerGame\obj\Debug\MarysPokerGame.exe
+C:\Users\v-sammar\Documents\GIT\LEAP_Cohort3\MarysPokerGame\MarysPokerGame\obj\Debug\MarysPokerGame.pdb
