@@ -11,19 +11,21 @@ namespace MarysPokerGame
     //..or class implements to order or sort its instances.
 
     //Here, we attached IComparable to the card class so that when we call array.sort and pass in.. 
-    //..instances of a card array (our hand), the .sort method will come to the card class and call
-    //..the "compare.To" method below.
+    //..instances of a card array (our hand), the .sort method will come to this card class and call
+    //..the "compare.To" method at the very bottom.
     public class Card : IComparable<Card>
     {
-        //Our card class has two properties, rank and  suit.  
-        //The set is private so that after the hand has been set, it cannot be changed.
+        //Properties.
+        //Our card class has two properties; rank and suit. 
+        //The getter gets or "reads" the value.  The setter sets or "writes" the value.
+        //Set is set to private so that after the hand has been set, it cannot be changed.
         public Rank Rank { get; private set; }
         public Suit Suit { get; private set; }
 
         //Constructor.
         //When a card class is instantiated, a rank and suit must also be passed in as an argument.
-        //This is a condition that we have "pre-set" for our own purposes an object does not always have to
-        //..take in a parameter when it is instantiated for use.
+        //This is a condition that we have "pre-set" for our own purposes.
+        //An object does not always have to take in an argument when it is instantiated for use.
         public Card(Rank rank, Suit suit)
         {
             this.Rank = rank;
