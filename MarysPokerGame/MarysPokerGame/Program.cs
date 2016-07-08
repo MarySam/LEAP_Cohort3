@@ -10,7 +10,8 @@ namespace MarysPokerGame
     {
         public static bool IsStraightFlush(Card[] Hand)
         {
-            if (true)//IsStraight(Hand) && IsFlush(Hand))
+            //See Straight Method and Flush Method
+            if (IsStraight(Hand) && IsFlush(Hand))
             {
                 return true;
             }
@@ -22,6 +23,7 @@ namespace MarysPokerGame
 
         public static bool IsFourOfAKind(Card[] Hand)
         {
+            //Example: 2,2,2,2,3             || 3,4,4,4,4
             if (Hand[0].Rank == Hand[3].Rank || Hand[1].Rank == Hand[4].Rank)
             {
                 return true;
@@ -32,37 +34,89 @@ namespace MarysPokerGame
             }
         }
 
+        //Three of A Kind plus One Pair.
         public static bool IsFullHouse(Card[] Hand)
         {
-            if (Hand[0].Rank == Hand[2].Rank && Hand[4].Rank == Hand[3].Rank)
+            //Example: 2,2,2,3,3
+            if (Hand[0].Rank == Hand[2].Rank && Hand[3].Rank == Hand[4].Rank)
             {
                 return true;
             }
-
-            else if (Hand[4].Rank == Hand[2].Rank && Hand[0].Rank == Hand[1].Rank)
+            //Example: 3,3,4,4,4
+            else if (Hand[0].Rank == Hand[1].Rank && Hand[2].Rank == Hand[4].Rank)
             {
                 return true;
             }
-
             else
             {
                 return false;
             }
         }
-        /*
+
         public static bool IsFlush(Card[] Hand)
         {
-           //For loop.  Iterate through the suits and compare.  If they are the same then return true.
+            //All the same suit i.e. all Hearts
+            //Iterate through the cards and compare each suit using two pointers.  
+            //If they are all the same then return true.
+            int j = 0;
+            bool result = false;
+            for (int i = 1; i < Hand.Length; i++)
+            {
+                if (Hand[i].Suit == Hand[j].Suit)
+                {
+                    j++;
+                    result = true;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            return result;
         }
 
+        //Example: 1,2,3,4,5
         public static bool IsStraight(Card[] Hand)
         {
-            //Make sure that the difference between each card is equal to one.
+            //Iterate through the cards and check that the difference between each rank is equal to one.
+            bool result = false;
+            for (int i = 1; i < Hand.Length; i++)
+            {
+                if (Hand[i].Rank - Hand[i - 1].Rank == 1)
+                {
+                    result = true; ;
+                }
+                else
+                {
+                    break;
+                }
+            }
+            return result;
         }
 
         public static bool IsThreeOfAKind(Card[] Hand)
         {
-        //for loop: i-2,
+            //Use suit at index 2 to compare to the rest of the cards.
+            bool result = false;
+            for (int i =2; i<Hand.Length; i++)
+            {
+                //Example: 2,2,2,3,4
+                if(Hand[i].Rank == Hand[i-1].Rank && Hand[i].Rank == Hand[i-2].Rank)
+                {
+                    result = true;
+                }
+                //Example: 1,2,3,3,3
+                else if (Hand[i].Rank == Hand[i+1].Rank && Hand[i].Rank == Hand[i+2].Rank)
+                {
+                    result = true;
+                }
+                //Example: 1,3,3,3,4
+                else if (Hand[i].Rank == Hand[i-1].Rank && Hand[i].Rank == Hand[i+2].Rank)
+                {
+                    result = true;
+                }
+            }
+            return result;
         }
 
         public static bool TwoPairs(Card[] Hand)
@@ -77,20 +131,7 @@ namespace MarysPokerGame
 
         public static void HighCard(Card[] Hand)
         {
-            //All other cards that were not filtered above for conditions end up here.
-        }
-        */
-        enum HandTypes
-        {
-            Highcard,
-            Pair,
-            TwoPair,
-            ThreeofAKind,
-            Straight,
-            Flush,
-            FullHouse,
-            FourOfAKind,
-            StraightFlush,
+            //If all of the other HandTypes return false then that means the user has a HighCard.
         }
 
         static void Main(string[] args)
@@ -102,6 +143,8 @@ namespace MarysPokerGame
 
             Array.Sort(hands);
 
+
+ 
         }
     }
 }
