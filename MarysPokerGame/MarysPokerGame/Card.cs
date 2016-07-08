@@ -41,8 +41,7 @@ namespace MarysPokerGame
 
             if (this.Rank < other.Rank) return -1;
 
-            //If none of the above condition checks are true then return 0.  
-            //Meaning...we only have one card so there is nothing to compare it to.
+            // If none of the above conditions is met, the cards are equal (Same rank and suit).
             return 0;
         }
     }
